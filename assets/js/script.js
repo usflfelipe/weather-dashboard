@@ -26,7 +26,6 @@ function findCity() {
     })
 }
 
-// This function gets the info for a city already in the list. It does not need to check whether the city exists as it was already checked when the city was first searched for.
 function getListCity(coordinates) {
     apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=minutely,hourly&units=imperial&appid=71311474f5b26fb7bbfa0bc1985b90cd";
 
@@ -76,7 +75,6 @@ function getFutureWeather(data) {
     }
 }
 
-// This function applies title case to a city name if there is more than one word.
 function titleCase(city) {
     var updatedCity = city.toLowerCase().split(" ");
     var returnedCity = "";
@@ -87,7 +85,6 @@ function titleCase(city) {
     return returnedCity;
 }
 
-// This converts the UNIX time that is received from the server.
 function convertUnixTime(data, index) {
     const dateObject = new Date(data.daily[index + 1].dt * 1000);
 
